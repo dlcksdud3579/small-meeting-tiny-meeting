@@ -3,59 +3,60 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="common.css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+    <script src="popup.js"></script>
+    <script>
+        var rowId = '<?=$_GET["rowId"]?>';
+    </script>
+
 </head>
 
 <div id='top'>
-    <h1>Small Meeting Tiny Meeting</h1>
+    <h1>SMTM</h1>
+    <h2>SMTM</h2>
 </div>
 <div id=popup_content>
     <div id="member">
         출석부
         <hr>
-        <form action="">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-            <input type="button" value="이찬영">
-        </form>
+        <div id="unpass">
+            <form>
+                <input class="btn" type="button" value="찬영1">
+                <input class="btn" type="button" value="찬영2">
+                <input class="btn" type="button" value="찬영3">
+            </form>
+        </div>
+        <div id="pass">
+            <form>
+                <input class="clbtn" type="button" value="찬영4">
+                <input class="clbtn" type="button" value="찬영5">
+                <input class="clbtn" type="button" value="찬영6">
+            </form>
+        </div>
+        <div>
+        </div>
+
+
+
     </div>
     <div id="money">
         에산사용
         <hr>
-        <form action="" style="">
-            <input type=text>
-            <input type= "submit">
+        <form>
+            <textarea name="money" rows=5></textarea>
+            <input id = "inputText" type=text>
+            <input id = "inputBtn" type="button" value="입력">
         </form>
 
     </div>
     <div id="img">
         사진부
         <hr>
-    </div>
-    <div id="file">
-        파일부
-        <hr>
+        <br>
+        <br>
+        <input multiple="multiple"  type="file" name="filename[]"/>
     </div>
 </div>
 

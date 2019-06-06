@@ -3,21 +3,30 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="common.css" />
+    <meta charset="UTF-8">
+    <title>테스트(샘플)</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="meeting.css" />
+    <script src="meeting.js"></script>
+    <script>
+        var rowId = '<?=$_GET["rowId"]?>';
+    </script>
+
 </head>
 
 <div id='top'>
     <h1>Small Meeting Tiny Meeting</h1>
 </div>
 <div id=popup_content>
-    <table>
-        <tr>
+    <table id="mtable">
+        <tr month='5'>
             <th>5월</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td week='1'>5-1</td>
+            <td>5-2</td>
+            <td>5-3</td>
+            <td>5-4</td>
+            <td>5-5</td>
         </tr>
         <tr>
             <th>4월</th>

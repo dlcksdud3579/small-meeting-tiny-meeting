@@ -1,0 +1,89 @@
+<?
+/*
+	include "./lib/class.mysql.php";
+	$DB = new MysqlDB("./lib/DB.auth.dbedu21.php","dbedu21");
+	$DB->err_report = true;
+
+	$data = $DB->fetch_array("test", "*", "row_id='106'" ); //테이블, 필드, 유ㅔ어절
+	print_r($data);
+	$data = $DB->fetch_assoc("test", "*", "row_id='106'" ); //테이블, 필드, 유ㅔ어절
+	print_r($data);
+
+
+
+	$result = $DB->query("SELECT * FROM test WHERE 1");
+	while($rows=mysqli_fetch_assoc($result)){
+		echo $rows[row_id]." ".$rows[student_id]."\n";
+	}
+
+
+	
+	$data = $DB->fetch_field("test", "student_id", "row_id='106'" ); //테이블, 필드, 유ㅔ어절
+	print_r($data);
+*/
+?>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>테스트(샘플)</title>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./list.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./list.css" />
+<script type="text/javascript">
+//<!--
+//-->
+</script>
+</head>
+
+<body>
+	<div id="nav">
+	<?
+//	$DB->fetch_field("test", "student_id", "row_id='106'" );
+	
+	?>
+		<ul>
+			<li><a href="form.html">입력</a></li>
+			<li><a href="list.html">목록</a></li>
+			<li><a href="view.html">보기</a></li>
+		</ul>
+	</div>
+
+	<button type="button" id="btn_refresh">갱신</button>
+
+	<div id="content">
+		<ul id="list"></ul>
+	</div>
+
+	<div id="view" style="float:left; border:2px solid #ccc; width:300px;">
+		<table border=1>
+		<tr>
+			<td>row_id</td>
+			<td id="row_id">ddd</td>
+		</tr>
+		<tr>
+			<td>kind</td>
+			<td id="kind">ddd</td>
+		</tr>
+		<tr>
+			<td>time_stamp</td>
+			<td id="time_stamp">ddd</td>
+		</tr>
+		<tr>
+			<td>student_id</td>
+			<td id="student_id">ddd</td>
+		</tr>
+		<tr>
+			<td>tester_id</td>
+			<td id="tester_id">ddd</td>
+		</tr>
+		<tr>
+			<td>test_place</td>
+			<td id="test_place">ddd</td>
+		</tr>
+		</table>
+	</div>
+
+</body>
+</html>

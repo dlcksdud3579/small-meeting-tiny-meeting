@@ -1,0 +1,14 @@
+table#mtable tr th{
+    text-align: center;
+    width: 10%
+}
+table#mtable tr td {
+    text-align: center;
+    width: 10%;
+
+}
+.addbtn{
+    font-size: 70px;
+    color: red;
+
+}

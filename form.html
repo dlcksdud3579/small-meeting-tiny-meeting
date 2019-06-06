@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>테스트(샘플)</title>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./form.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<script type="text/javascript">
+	var rowid = "<?=$_GET['rowid']?>";
+	
+
+
+	
+	$(function(){
+		if(rowid){ //수정모드
+				alter("잘못된 접근입니다.");
+				history.back();
+			
+			set_data(rowid);
+		}
+		$("#btn_submit").click(function(){
+			test_save();
+		});
+	});
+
+//-->
+</script>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li><a href="form.html">입력</a></li>
+			<li><a href="list.html">목록</a></li>
+			<li><a href="view.html">보기</a></li>
+		</ul>
+	</div>
+
+	<div id="content">
+
+		<form method="post" id="frm_test1">
+			<input type="hidden" name="mode" value="test1_INSERT">
+			<ul>
+				<!-- <li>
+					<p>kind</p>
+					<p>
+						<input type="radio" name="q1" id="q1_a" value="A" checked><label for="q1_a">A</label>
+						<input type="radio" name="q1" id="q1_b" value="B"><label for="q1_b">B</label>
+						<input type="radio" name="q1" id="q1_c" value="C"><label for="q1_c">C</label>
+						<input type="radio" name="q1" id="q1_d" value="D"><label for="q1_d">D</label>
+					</p>
+				</li> -->
+				<li>
+					<p>row_id</p>
+					<p><input type="text" name="row_id" id="row_id"></p>
+				</li>
+				<li>
+					<p>kind</p>
+					<p><input type="text" name="kind" id="kind"></p>
+				</li>
+				<li>
+					<p>student_id</p>
+					<p><input type="text" name="student_id" id="student_id"></p>
+				</li>
+				<li>
+					<p>tester_id</p>
+					<p><input type="text" name="tester_id" id="tester_id"></p>
+				</li>
+				<li>
+					<p>test_place</p>
+					<p><input type="text" name="test_place" id="test_place"></p>
+				</li>
+				<li>
+					<p>메모</p>
+					<p><textarea name="memo" id="memo"></textarea></p>
+				</li>
+			</ul>
+			<button type="button" id="btn_submit">제출</button>
+			<button type="button" id="btn_cancel" onclick="history.back();">취소</button>
+		</form>
+	</div>
+</body>
+</html>
