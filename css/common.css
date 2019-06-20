@@ -110,6 +110,14 @@ div#member{
     margin-right: 20px
 }
 
+input[type="button"]{
+    border-radius: 5px;
+    margin-left:-3px;
+    font-size: 13px;
+    background-color: royalblue;
+    color: whitesmoke;
+}
+
 footer {
 
     position:absolute;

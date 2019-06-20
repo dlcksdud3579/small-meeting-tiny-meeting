@@ -70,6 +70,7 @@ div#c_content{
     margin-bottom: 5px;
     border: 1px solid darkblue;
     background-color: white;
+    border-radius: 10px;
     width: 99%;
     min-height: 70px;
 }
@@ -79,8 +80,9 @@ div#v_content{
     margin-bottom: 5px;
     border: 1px solid darkblue;
     background-color: white;
+    border-radius: 10px;
     width: 99%;
-    min-height: 70px;
+    min-height: 100px;
 }
 
 ul.mylist, ol.mylist {
@@ -106,4 +108,13 @@ ul.mylist li, ol.mylist li {
     padding: 2px;
     font-size: 15px;
     cursor: pointer;
+}
+
+div.smalltitle{
+    background-color:royalblue;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    font-size: 20px;
+    color:whitesmoke;
+    margin-bottom: 5px
 }

@@ -21,8 +21,10 @@
 </div>
 <div id=popup_content>
     <div id="member">
+        <div class = "smalltitle">
         출석부
-        <hr>
+        </div>
+        
         <div id="unpass">
             <form>
 
@@ -40,8 +42,9 @@
 
     </div>
     <div id="money">
-        예산사용
-        <hr>
+        <div class = "smalltitle">
+            예산사용
+        </div>
         <form>
             <div id="m_content">
                 <ul id="m_list" class="mylist"> </ul>
@@ -49,25 +52,27 @@
             <input id="inputname" style="width: 70px;margin-right: 5px " placeholder="이름" type=text>
             <input id="inputnum" style="width: 30px;margin-right: 5px" placeholder="갯수" type=text>
             <input id="inputprice" style="width: 70px;margin-right: 5px" placeholder="가격" type=text>
-            <input id="inputBtn"  type="button" value="입력">
+            <input id="inputBtn" type="button" value="입력">
             <input id="deleteBtn" type="button" value="삭제">
         </form>
 
     </div>
 
     <div id="memo">
-        메모지
-        <hr>
+        <div class = "smalltitle">
+            메모지
+        </div>
         <form>
-            <textarea id="memotext" name="memo" rows=7></textarea>
+            <textarea id="memotext" name="memo" rows=7 style="border-radius:10px"></textarea>
 
         </form>
 
     </div>
 
     <div id="choose">
-        제비뽑기
-        <hr>
+        <div class = "smalltitle">
+            제비뽑기
+        </div>
         <div id = "c_content">
             <ul id="c_list" class="mylist"> </ul>
         </div>
@@ -77,8 +82,10 @@
     </div>
 
     <div id="voting">
-        투표
-        <hr>
+        <div class = "smalltitle">
+            투표
+        </div>
+        
         <div id="v_content">
             <ul id="v_list" class="mylist">
                 <li onclick="addvote()" name=0>&nbsp+&nbsp
