@@ -1,68 +1,43 @@
 <?php
 	include "./lib/class.mysql.php";
-	$DB = new MysqlDB("./lib/DB.auth.dbedu21.php","dbedu21");
+	$DB = new MysqlDB("./lib/DB.auth.localhost.php","id9828531_dbsmtm");
 	$DB->err_report = true;
+
+
 	$mode = $_POST['mode'];
 
-
 	switch($mode){
-		case "test1_INSERT": //�Է�
-			$rowid		= $_POST['rowid'];
-			$row_id		= $_POST['row_id'];
-			$test_place = $_POST['test_place'];
-			$tester_id	= $_POST['tester_id'];
-			$student_id = $_POST['student_id'];
-			$kind = $_POST['kind'];
 
-
-			/*
-			$dap = "1111111";
-
-			if(strlenth()){
-				echo "EQ001";
-				exit;
-			}
-			*/
-
-			$sql = "
-				INSERT INTO test (
-					kind, test_place, tester_id, student_id
+		case "login":
+			$id=  $_POST['id'];
+			$rtn_data = $DB->fetch_assoc("user","id","id='$id'");
+			if(empty($rtn_data))
+			{
+			
+				$name =$_POST['nickname'];
+				$pImg =  $_POST['pImg'];
+				$sImg =  $_POST['sImg'];
+				
+				$sql = "
+				INSERT INTO user (
+					id, name, pImg, sImg
 				) VALUES(
-					'$kind', '$test_place','$tester_id','$student_id'
+					$id,'$name','$pImg','$sImg'
 				)";
-			$result = $DB->query($sql);
-
-			if ($result) {
-				echo "0000";
-			} else {
-				//echo "QE001";
+				$result = $DB->query($sql);
+				if ($result) {
+					echo "0000";
+				} else {
+					echo "login:fail";
+				}
+				break;
 			}
-			//$result = array("1"=>1,"a"=>2,"b"=>3,"c"=>4);
-			//echo json_encode($result);
+			echo "0000";
 			break;
-
-	
-		case "test1_UPDATE": //����
-			$rowid		= $_POST['rowid'];
-			$row_id		= $_POST['row_id'];
-			$test_place = $_POST['test_place'];
-			$tester_id	= $_POST['tester_id'];
-			$student_id = $_POST['student_id'];
-			$kind = $_POST['kind'];
-
-			$sql = "UPDATE test SET kind='$kind', test_place='$test_place', tester_id='$tester_id', student_id='$student_id' WHERE row_id='$row_id'";
-			$result = $DB->query($sql);
-
-			if ($result) {
-				echo "0000";
-			} else {
-				//echo "QE001";
-			}
-			break;
-
-		case "test1_DELETE": //����
-			$rowid = $_POST['rowid'];
-			$sql = "DELETE FROM test WHERE row_id='$rowid'";
+		case "addMember":
+			$rowId =$_POST["rowId"]; 
+			$member = $_POST["member"];
+			$sql = "UPDATE meeting SET member='$member' WHERE rowId='$rowId'";
 			$result = $DB->query($sql);
 			if ($result) {
 				echo "0000";
@@ -71,11 +46,90 @@
 			}
 			break;
 
-		case "test3":
+		case "addMember2":
+			$rowId =$_POST["rowId"]; 
+			$member = $_POST["member"];
+			$sql = "UPDATE meetdata SET member='$member' WHERE rowId='$rowId'";
+			$result = $DB->query($sql);
+			if ($result) {
+				echo "0000";
+			} else {
+				//echo "QE001";
+			}
 			break;
+		case "meetdata_UPDATA":
+			$rowId =$_POST["rowId"]; 
+			$member = $_POST["member"];
+			$money = $_POST["money"];
+			$memo = $_POST["memo"];
+			$voting = $_POST["voting"];
+			$choose = $_POST["choose"];
+
+
+			$sql = "UPDATE meetdata SET member='$member',money='$money', memo='$memo',voting='$voting', choose='$choose' WHERE rowId='$rowId'";
+			$result = $DB->query($sql);
+			if ($result) {
+				echo "0000";
+			} else {
+				//echo "QE001";
+			}
+				
+			break;
+		case "meetdata_INSERT":
+			$meetingId = $_POST['meetingId'];
+			$month = $_POST['month'];
+			$week = $_POST['week'];
+		
+			$sql = "INSERT INTO `meetdata`(`meetingId`, `month`, `week`) VALUES ($meetingId	,$month,$week )";
+			$result = $DB->query($sql);
+
+			if ($result) {
+				echo "0000";
+			} else {
+			}
+
+			break;
+		case "meeting_INSERT":
+			$name = $_POST['name'];
+			$id = $_POST['id'];
+			
+		
+			$sql = "INSERT INTO `meeting`(`name`) VALUES ('$name')";
+			$result = $DB->query($sql);
+			$rowid = $DB->insert_id();
+
+			if ($result) {
+					$sql = "INSERT INTO `auth`(`id`, `rowid`, `ms`) VALUES ( $id,$rowid,1)";
+					$result = $DB->query($sql);
+					if ($result){
+						echo "0000";
+					}
+					else{
+						echo "0001";
+					}
+			} else {
+				echo "0002";
+			}
+
+			break;
+
+		case "invite":
+			$id = $_POST["id"];
+			$rowid = $_POST["rowId"];
+
+			$sql = "INSERT INTO `auth`(`id`, `rowid`, `ms`) VALUES ( $id,$rowid,0)";
+			$result = $DB->query($sql);
+			if ($result) {
+				echo "0000";
+			} else {
+				echo "0001";
+			}
+		break;
+
 	}
 
 
 	$DB->close();
 	exit;
+
 ?>

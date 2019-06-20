@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="member.css" />
+    <script src="./lib/function.common.js"></script>
+    <script src="./member.js"></script>
+    <script>
+        var rowId = getParam("rowId");
+    </script>
+
+</head>
+
+<div id='top'>
+    <h1>SMTM</h1>
+    <h2>멤버관리</h2>
+</div>
+<div id=popup_content>
+    <div id="member">
+        출석부
+        <hr>
+        <div id="member_in">
+
+        </div>
+    </div>
+    
+    <form style="text-align: center;">
+        <input id = "name" placeholder="이름" type=text>
+        <input id = "inputBtn" type="button" value="추가" onclick="addMember()">
+        <input id = "deleteBtn" type="button" value="제거" onclick="deleteMember()">
+    </form>
+
+</div>
+
+</html>

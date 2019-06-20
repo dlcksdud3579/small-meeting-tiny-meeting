@@ -4,11 +4,13 @@
 
 <head>
     <script src="./js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
-    <link rel="stylesheet" type="text/css" href="popup.css" />
-    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./popup.css" />
+    <script src="./popup.js"></script>
+    <script src="./lib/function.common.js"></script>
     <script>
-        var rowId = '<?=$_GET["rowId"]?>';
+        var rowId = getParam("rowId");
+        var meetingId = getParam("meetingId");
     </script>
 
 </head>
@@ -23,16 +25,12 @@
         <hr>
         <div id="unpass">
             <form>
-                <input class="btn" type="button" value="찬영1">
-                <input class="btn" type="button" value="찬영2">
-                <input class="btn" type="button" value="찬영3">
+
             </form>
         </div>
         <div id="pass">
             <form>
-                <input class="clbtn" type="button" value="찬영4">
-                <input class="clbtn" type="button" value="찬영5">
-                <input class="clbtn" type="button" value="찬영6">
+
             </form>
         </div>
         <div>
@@ -42,22 +40,58 @@
 
     </div>
     <div id="money">
-        에산사용
+        예산사용
         <hr>
         <form>
-            <textarea name="money" rows=5></textarea>
-            <input id = "inputText" type=text>
-            <input id = "inputBtn" type="button" value="입력">
+            <div id="m_content">
+                <ul id="m_list" class="mylist"> </ul>
+            </div>
+            <input id="inputname" style="width: 70px;margin-right: 5px " placeholder="이름" type=text>
+            <input id="inputnum" style="width: 30px;margin-right: 5px" placeholder="갯수" type=text>
+            <input id="inputprice" style="width: 70px;margin-right: 5px" placeholder="가격" type=text>
+            <input id="inputBtn"  type="button" value="입력">
+            <input id="deleteBtn" type="button" value="삭제">
         </form>
 
     </div>
-    <div id="img">
-        사진부
+
+    <div id="memo">
+        메모지
         <hr>
-        <br>
-        <br>
-        <input multiple="multiple"  type="file" name="filename[]"/>
+        <form>
+            <textarea id="memotext" name="memo" rows=7></textarea>
+
+        </form>
+
     </div>
+
+    <div id="choose">
+        제비뽑기
+        <hr>
+        <div id = "c_content">
+            <ul id="c_list" class="mylist"> </ul>
+        </div>
+        <div class = "btn_group">
+            <button class="btn3" onclick="chooseOne()">제비뽑기</button>
+        </div>
+    </div>
+
+    <div id="voting">
+        투표
+        <hr>
+        <div id="v_content">
+            <ul id="v_list" class="mylist">
+                <li onclick="addvote()" name=0>&nbsp+&nbsp
+                <li onclick="removevote()" name=0>&nbsp-&nbsp
+            </ul>
+        </div>
+    
+    </div>
+
+    <div class = "btn_group" style="text-align: center">
+        <button class="btn3" onclick="save()">&nbsp저장&nbsp</button>
+    </div>
+
 </div>
 
 </html>

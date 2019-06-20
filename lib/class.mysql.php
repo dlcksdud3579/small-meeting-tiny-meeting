@@ -90,8 +90,9 @@ class MysqlDB {
 		return @mysqli_result($this->result,0,0);
 	}
 	function insert_id(){
-		$this->query("SELECT last_insert_id()");
-		return @mysqli_result($this->result,0,0);
+		// $this->query("SELECT last_insert_id()");
+		// return @mysqli_result($this->result,0,0);
+		return $this->conn->insert_id;
 	}
 }
 ?>

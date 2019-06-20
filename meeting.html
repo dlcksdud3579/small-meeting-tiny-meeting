@@ -6,61 +6,32 @@
     <meta charset="UTF-8">
     <title>테스트(샘플)</title>
     <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="meeting.css" />
     <script src="meeting.js"></script>
+    <script src="./lib/function.common.js"></script>
+    
     <script>
-        var rowId = '<?=$_GET["rowId"]?>';
+        var rowId = getParam("rowId");
+        var name = getParam("name");
+        
     </script>
 
 </head>
 
 <div id='top'>
     <h1>Small Meeting Tiny Meeting</h1>
+    <h2 id = "name"></h2>
 </div>
 <div id=popup_content>
     <table id="mtable">
-        <tr month='5'>
-            <th>5월</th>
-            <td week='1'>5-1</td>
-            <td>5-2</td>
-            <td>5-3</td>
-            <td>5-4</td>
-            <td>5-5</td>
-        </tr>
-        <tr>
-            <th>4월</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>3월</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>2월</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>1월</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
     </table>
+    <div class = "btn_group">
+            <button class = "btn1" onclick = 'window.open("member.html?rowId="+rowId,"popup", "width=400, height=700, left=100, top=50");'>맴버관리</button>
+            <button class = "btn2"id="kakao-link-btn" onclick="javascript:sendLink()">초대하기</button>
+    </div>
+    
 </div>
 
 </html>

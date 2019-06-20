@@ -5,20 +5,32 @@ h2 {
 textarea{
     width:95%;
     overflow: visible;
+    resize: none;
 }
+
 
 .clbtn, .btn{
     background-color: white;
     margin:2px;
+    border-radius: 10px;
 }
 
 .btn{
-    border: 2px solid black;
+    border: 2px solid skyblue;
+    background-color: whitesmoke;
+    font-size:15px;
+    font-weight: bolder;
+    color: gray
 }
 .clbtn{
 
-    border: 2px solid red;
+    border: 2px solid skyblue;
+    background-color: royalblue;
+    font-size:15px;
+    font-weight: bolder;
+    color: lightgray
 }
+
 #member form{
     text-align: left;
     padding: 5px;
@@ -27,9 +39,11 @@ textarea{
 
 #pass,#unpass{
     margin: 5px;
-    border: 1px solid red;
+    border: 1px solid darkblue;
+    background-color: white;
+    border-radius: 10px;
     width: 45%;
-    height: 60%;
+    min-height: 140px;
 }
 #pass{
     float: right;
@@ -38,4 +52,58 @@ textarea{
 #unpass{
     float: left;
     margin-left: 10px;
+}
+
+div#m_content{
+    float: center;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid darkblue;
+    background-color: white;
+    border-radius: 10px;
+    width: 99%;
+    min-height: 70px;
+}
+div#c_content{
+    float: center;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid darkblue;
+    background-color: white;
+    width: 99%;
+    min-height: 70px;
+}
+div#v_content{
+    float: center;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid darkblue;
+    background-color: white;
+    width: 99%;
+    min-height: 70px;
+}
+
+ul.mylist, ol.mylist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  
+    max-width: 900px;
+    width: 100%;
+}
+  
+ul.mylist li, ol.mylist li {
+    content: ">";
+    display: inline-block;
+    text-align: left;
+    padding: 0px;
+    margin: 2px;
+    
+    border: 1px solid darkblue;
+    background-color: lightcyan;
+
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 15px;
+    cursor: pointer;
 }

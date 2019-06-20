@@ -7,19 +7,17 @@
 <script src="./list.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/common.css" />
 <link rel="stylesheet" type="text/css" href="./list.css" />
+<script src="./lib/function.common.js"></script>
 <script type="text/javascript">
-//<!--
-//-->
+	var id = getParam("id");
 </script>
 </head>
 <div id='top'>
     <h1>Small Meeting Tiny Meeting</h1>
 </div>
 <body>
-	
-	<div id="popup_content">
-		<ul id="list"></ul>
+	<div id="popup_content" style="text-align: center">
+		<ul id="list" class = "mylist"></ul>
 	</div>
-	<button type="button" id="btn_refresh">갱신</button>
 </body>
 </html>

@@ -2,9 +2,11 @@
 	include "./lib/class.mysql.php";
 	$DB = new MysqlDB("./lib/DB.auth.dbedu21.php","dbedu21");
 	$DB->err_report = true;
+
+
+
+
 	$mode = $_POST['mode'];
-
-
 	switch($mode){
 		case "test1_INSERT": //�Է�
 			$rowid		= $_POST['rowid'];

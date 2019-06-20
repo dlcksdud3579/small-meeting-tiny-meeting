@@ -1,14 +1,90 @@
 table#mtable tr th{
     text-align: center;
-    width: 10%
+    width: 20%
 }
 table#mtable tr td {
-    text-align: center;
-    width: 10%;
+    text-align: left;
+    width: 80%;
 
 }
 .addbtn{
     font-size: 70px;
     color: red;
 
+}
+
+ul.mylist, ol.mylist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  
+    max-width: 900px;
+    width: 100%;
+}
+  
+ul.mylist li, ol.mylist li {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+    
+    margin: 5px;
+    
+    border: 1px solid blue;
+    background-color: rgb(110, 145, 250);
+    color: antiquewhite;
+    border-radius: 10px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+ul.mylist li, ol.mylist li {
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+
+
+    -webkit-transition: color 0.3s linear;
+    -moz-transition: color 0.3s linear;
+    -ms-transition: color 0.3s linear;
+    -o-transition: color 0.3s linear;
+    transition: color 0.3s linear;
+}
+  
+ul.mylist li:hover,ol.mylist li:hover {
+    background-color: #f6f6f6;
+    color:darkgray;
+}
+
+.btn1{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right:-4px;
+    font-size: 15px;
+}
+.btn2{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;    
+    margin-left:-3px;
+    font-size: 15px;
+}
+.btn_group button{
+    
+    border: 2px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: royalblue;
+    padding: 5px;
+    font-weight: 800;
+    
+}
+.btn_group button:hover{
+    color:white;
+    background-color: skyblue;
+}
+.btn_group {
+    margin: 10px;
+    float: right;
+    margin-right: 20px
 }
